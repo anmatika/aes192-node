@@ -5,7 +5,6 @@ const encrypt = (message, secret) => {
 
     let hash = cipher.update(message, 'utf8', 'hex');
     hash += cipher.final('hex');
-    logger.log('info', hash);
     return hash;
 };
 
@@ -25,8 +24,6 @@ const decrypt = (hash, secret) => {
             resolve(decrypted);
         });
         decipher.on('error', (err) => {
-            logger.log('error', err);
-
             reject('ERROR: aes192 decrypt failed.');
         });
     });
