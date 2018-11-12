@@ -1,4 +1,3 @@
-// test
 const crypto = require('crypto');
 
 const encrypt = (message, secret) => {
